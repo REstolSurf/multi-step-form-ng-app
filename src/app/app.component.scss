@@ -1,0 +1,35 @@
+@import "../../src/scss/variables", "../../src/scss/mixins" ;
+
+.container{
+    background-color:$bg-color;
+    min-height:100dvh;
+}
+.content{
+    max-width:100dvw;
+}
+
+@include tablet(){
+    .container{
+        @include flex(row,nowrap, center,center);
+    }
+    .content{
+        display:grid;
+        grid-template-columns: 30% auto;
+        grid-template-rows: auto 10%;
+        gap:3rem;
+        background-color:$white;
+        min-width: 37.5rem;
+        min-height: 30rem;
+        width: 90%;
+        max-width: 49rem;
+        border-radius: 0.5rem;
+        padding:1rem 3rem 1rem 1rem;
+    }
+    app-stepbar{
+        grid-row: 1 / 3; 
+    }
+    app-nav-buttons{
+        grid-row: 2 / 3; 
+        grid-column: 2 / 3;
+    }
+}

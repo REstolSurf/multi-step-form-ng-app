@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="stepsbar" *ngFor="let step of steps">
+        <div [ngClass]="{'active' : currentStep$ === step.position}" class="stepsbar__div">{{step.position}}</div>
+        <div class="stepsbar__details">
+            <h2 class="stepsbar__h2">
+                STEP {{step.position}}
+            </h2>
+            <h3 class="stepsbar__h3">
+                {{step.title | uppercase}}
+            </h3>
+        </div>
+    </div>
+</div>

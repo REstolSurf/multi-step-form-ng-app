@@ -1,0 +1,77 @@
+@import "./variables";
+
+@mixin h1{
+    font-size: 1.5em;
+    font-weight: 700;
+    color: $body;
+}
+
+@mixin text{
+    font-size: 1em;
+    font-weight: 500;
+    color: $body;
+}
+
+@mixin light-text{
+    font-size: 1em;
+    font-weight: 500;
+    color: $white;
+}
+
+@mixin h2{
+    font-size: 1em;
+    font-weight: 500;
+    color: $sub-title;
+}
+
+@mixin h3{
+    font-size: .875em;
+    font-weight: 300;
+    color: $body;
+}
+
+@mixin h4{
+    font-size: .875em;
+    font-weight: 300;
+    color: $secondary-color;
+}
+
+@mixin h5{
+    font-size: 1em;
+    font-weight: 500;
+    color: $secondary-color;
+}
+
+@mixin button($bg){
+    background-color: $bg;
+    padding:0.5rem;
+    border-radius:0.5rem;
+    min-width: 6rem;
+
+}
+
+
+@mixin flex($dir,$corte,$just,$align){
+    display: flex; 
+    flex-flow:  $dir $corte;
+    justify-content: $just;
+    align-items: $align;
+}
+
+@mixin tablet($medida: 650px){
+    @media screen and (min-width:$medida){
+       @content;
+    }
+}
+
+@mixin laptop($medida: 960px){
+    @media screen and (min-width:$medida){
+       @content;
+    }
+}
+
+@mixin desktop($medida: 1280px){
+    @media screen and (min-width:$medida){
+       @content;
+    }
+}
