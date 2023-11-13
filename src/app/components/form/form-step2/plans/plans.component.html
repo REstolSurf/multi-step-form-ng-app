@@ -1,4 +1,4 @@
-<div class="addons">
+<div class="plans">
   <header>
     <div class="title">
       <h1 role="heading" aria-level="1">Select your plan</h1>
@@ -8,7 +8,7 @@
     </div>
   </header>
   <ng-container [formGroup]="form">
-    <form class="form-controls" formGroupName="planDetails">
+    <form class="form-controls" >
       <mat-button-toggle-group
         [formControl]="$any(form).get('planDetails.plan')"
         aria-label="Plan Selection"
@@ -33,13 +33,12 @@
       <span>Monthly</span>
       <mat-slide-toggle
         id="planDuration"
-        formControlName="yearlyPlan"
+        [formControl]="$any(form).get('planDetails.yearlyPlan')"
         [checked]="yearlyIsChecked"
-        (change)="sliderChanged()"
+        (change)="updatePrices()"
       ></mat-slide-toggle>
       <span>Yearly</span>
 
-      <p>Chosen plan is {{ form.get("planDetails.plan")?.value }}</p>
     </form>
   </ng-container>
 </div>

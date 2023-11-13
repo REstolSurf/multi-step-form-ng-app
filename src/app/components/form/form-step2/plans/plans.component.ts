@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormGroupDirective } from '@angular/forms';
+import { Pricing } from 'src/app/classes/pricing';
 
 @Component({
   selector: 'app-plans',
@@ -10,35 +11,49 @@ export class PlansComponent implements OnInit {
   form!: FormGroup;
   yearlyIsChecked: boolean = false;
   discount: string = '2 months free';
+  prices = new Pricing();
+  
 
-  arcade = { monthlyPrice: 9, yearlyPrice: 90 };
-  advanced = { monthlyPrice: 12, yearlyPrice: 120 };
-  pro = { monthlyPrice: 15, yearlyPrice: 150 };
+  arcadePrice: number;
+  advancedPrice: number;
+  proPrice: number;
 
-  arcadePrice: number= this.arcade.monthlyPrice;
-  advancedPrice: number = this.advanced.monthlyPrice;
-  proPrice: number = this.pro.monthlyPrice;
-
-  constructor(private rootFormGroup: FormGroupDirective) {}
+  constructor(private rootFormGroup: FormGroupDirective) {
+    this.arcadePrice = this.prices.getMonthlyPrice('arcade');
+    this.advancedPrice = this.prices.getMonthlyPrice('advanced');
+    this.proPrice = this.prices.getMonthlyPrice('pro');
+  }
 
   ngOnInit(): void {
     this.form = this.rootFormGroup.control as FormGroup;
+
+    this.form.get('planDetails.yearlyPlan')?.valueChanges.subscribe((value) => {
+      // Realizar acciones adicionales cuando cambia el valor de 'yearlyPlan'
+      this.yearlyIsChecked = value;
+    });
   }
 
-  sliderChanged() {
-    this.yearlyIsChecked = !this.yearlyIsChecked;
+  updatePrices() {
     if (this.yearlyIsChecked) {
-      this.arcadePrice = this.arcade.yearlyPrice;
-      this.advancedPrice = this.advanced.yearlyPrice;
-      this.proPrice = this.pro.yearlyPrice;
+      this.updatePlanCost(
+        this.prices.getYearlyPrice(this.form.get('planDetails.plan')?.value)
+      );
+
+      this.arcadePrice = this.prices.getYearlyPrice('arcade');
+      this.advancedPrice = this.prices.getYearlyPrice('advanced');
+      this.proPrice = this.prices.getYearlyPrice('pro');
     } else {
-      this.arcadePrice = this.arcade.monthlyPrice;
-      this.advancedPrice = this.advanced.monthlyPrice;
-      this.proPrice = this.pro.monthlyPrice;
+      this.updatePlanCost(
+        this.prices.getMonthlyPrice(this.form.get('planDetails.plan')?.value)
+      );
+
+      this.arcadePrice = this.prices.getMonthlyPrice('arcade');
+      this.advancedPrice = this.prices.getMonthlyPrice('advanced');
+      this.proPrice = this.prices.getMonthlyPrice('pro');
     }
   }
 
-  updatePlanCost(cost: number){
+  updatePlanCost(cost: number) {
     this.form.get('planDetails')?.patchValue({ cost: cost });
   }
 }

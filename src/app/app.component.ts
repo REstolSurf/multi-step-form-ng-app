@@ -23,20 +23,19 @@ export class AppComponent  implements OnInit {
 
       planDetails: this.fb.group({
         plan: ['arcade'],
-        yearlyPlan: false,
+        yearlyPlan: [false],
         cost: [9]
       }),
 
       addOnsDetails: this.fb.group({
         service: [false],
-        serviceCost: [0],
+        serviceCost: [1],
         storage: [false],
-        storageCost: [0],
+        storageCost: [2],
         customization: [false],
-        customizationCost: [0],
+        customizationCost: [2],
       })
     });
-    console.log(this.form);
 
   }
 }
