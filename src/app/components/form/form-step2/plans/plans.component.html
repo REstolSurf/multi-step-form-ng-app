@@ -1,1 +1,45 @@
-<p>plans works!</p>
+<div class="addons">
+  <header>
+    <div class="title">
+      <h1 role="heading" aria-level="1">Select your plan</h1>
+      <h2 role="heading" aria-level="2">
+        You have the option of monthly or yearly billing.
+      </h2>
+    </div>
+  </header>
+  <ng-container [formGroup]="form">
+    <form class="form-controls" formGroupName="planDetails">
+      <mat-button-toggle-group
+        [formControl]="$any(form).get('planDetails.plan')"
+        aria-label="Plan Selection"
+      >
+        <mat-button-toggle value="arcade" (click)="updatePlanCost(arcadePrice)">
+          <h3>Arcade</h3>
+          <h4>{{ arcadePrice | toPriceString: yearlyIsChecked}}</h4>
+          <h5 *ngIf="yearlyIsChecked">{{ discount }}</h5>
+        </mat-button-toggle>
+        <mat-button-toggle value="advanced" (click)="updatePlanCost(advancedPrice)">
+          <h3>Advanced</h3>
+          <h4>{{ advancedPrice| toPriceString: yearlyIsChecked}}</h4>
+          <h5 *ngIf="yearlyIsChecked">{{ discount }}</h5>
+        </mat-button-toggle>
+        <mat-button-toggle value="pro" (click)="updatePlanCost(proPrice)">
+          <h3>Pro</h3>
+          <h4>{{proPrice| toPriceString: yearlyIsChecked}}</h4>
+          <h5 *ngIf="yearlyIsChecked">{{ discount }}</h5>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+
+      <span>Monthly</span>
+      <mat-slide-toggle
+        id="planDuration"
+        formControlName="yearlyPlan"
+        [checked]="yearlyIsChecked"
+        (change)="sliderChanged()"
+      ></mat-slide-toggle>
+      <span>Yearly</span>
+
+      <p>Chosen plan is {{ form.get("planDetails.plan")?.value }}</p>
+    </form>
+  </ng-container>
+</div>

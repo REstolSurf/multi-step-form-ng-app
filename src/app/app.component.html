@@ -1,7 +1,13 @@
 <div class="container">
   <div class="content">
     <app-stepbar/>
-    <app-form-group/>
-    <app-nav-buttons/>
+    <ng-container [formGroup]="form">
+      <app-personal-details/>
+      <app-plans/>
+      <app-add-ons/>
+      <app-summary/>
+
+  </ng-container>
+      <app-nav-buttons/>
   </div>
 </div>
