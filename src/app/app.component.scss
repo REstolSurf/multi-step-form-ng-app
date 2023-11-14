@@ -6,11 +6,31 @@
 }
 .content{
     max-width:100dvw;
+    position:relative;
+}
+
+.main{
+    background-color: $white;
+    padding: 1.5rem 1rem;
+    border-radius: .5rem;
+    width:80%;
+    position:absolute;
+    top:100px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 @include tablet(){
     .container{
         @include flex(row,nowrap, center,center);
+    }
+
+    .main{
+        background-color: transparent;
+        position:relative;
+        transform: none;
+        top:0;
+        left:0;
     }
     .content{
         display:grid;

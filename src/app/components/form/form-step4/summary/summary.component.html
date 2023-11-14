@@ -10,7 +10,7 @@
   <section>
     <div>
       <div>
-        <h3>{{ this.form.get("planDetails.plan")?.value }} ({{this.form.get("planDetails.yearlyPlan")?.value? 'Yearly': 'Monthly'}})</h3>
+        <h3>{{ this.form.get("planDetails.plan")?.value | titlecase}} ({{this.form.get("planDetails.yearlyPlan")?.value? 'Yearly': 'Monthly'}})</h3>
         <button (click)="goToPlans()">Change</button>
       </div>
       <h3>
@@ -23,30 +23,30 @@
     <div>
       <div *ngIf="this.form.get('addOnsDetails.service')?.value">
         <h2>Online Service</h2>
-        <h3>
+        <h5>
           {{
             this.form.get("addOnsDetails.serviceCost")?.value
               | toPriceString : this.form.get("planDetails.yearlyPlan")?.value
           }}
-        </h3>
+        </h5>
       </div>
       <div *ngIf="this.form.get('addOnsDetails.storage')?.value">
         <h2>Larger Storage</h2>
-        <h3>
+        <h5>
           {{
             this.form.get("addOnsDetails.storageCost")?.value
               | toPriceString : this.form.get("planDetails.yearlyPlan")?.value
           }}
-        </h3>
+        </h5>
       </div>
       <div *ngIf="this.form.get('addOnsDetails.customization')?.value">
         <h2>Customizable Profile</h2>
-        <h3>
+        <h5>
           {{
             this.form.get("addOnsDetails.customizationCost")?.value
               | toPriceString : this.form.get("planDetails.yearlyPlan")?.value
           }}
-        </h3>
+        </h5>
       </div>
     </div>
     <div>

@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import '../src/scss/reset';
+@import '../src/scss/reset' , '../src/scss/mixins';
 html,
 body {
   height: 100%;
@@ -7,4 +7,23 @@ body {
 body {
   margin: 0;
   font-family: "Ubuntu", sans-serif;
+}
+
+h1{
+  @include h1();
+}
+h2{
+  @include h2();
+}
+h3{
+  @include h3();
+}
+h4{
+  @include h4();
+}
+h5{
+  @include h5();
+}
+p{
+  @include text();
 }

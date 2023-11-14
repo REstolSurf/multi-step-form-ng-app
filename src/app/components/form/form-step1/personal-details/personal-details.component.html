@@ -1,6 +1,6 @@
 <div class="details">
   <header>
-    <div class="title">
+    <div>
       <h1 role="heading" aria-level="1">Personal info</h1>
       <h2 role="heading" aria-level="2">
         Please provide your name, email address, and phone number.
@@ -8,11 +8,11 @@
     </div>
   </header>
   <ng-container [formGroup]="form">
-    <form class="form-controls" formGroupName="personalDetails">
+    <form class="details__form" formGroupName="personalDetails">
       <!-- name input -->
-      <div class="input-details">
+      <div>
         <label for="name" id="name-label">Name</label>
-        <input
+        <input class="details__input"
           type="text"
           id="name"
           formControlName="name"
@@ -20,7 +20,7 @@
           aria-labelledby="name-label"
           aria-describedby="name-error"
         />
-        <div *ngIf="form.get('personalDetails.name')?.invalid && form.get('personalDetails.name')?.touched" id="name-error" role="alert">
+        <div class="details__error" *ngIf="form.get('personalDetails.name')?.invalid && form.get('personalDetails.name')?.touched" id="name-error" role="alert">
           Please enter your name
         </div>
         
@@ -28,9 +28,9 @@
       </div>
 
       <!-- email input -->
-      <div class="input-details">
+      <div>
         <label for="email" id="email-label">Email Address</label>
-        <input
+        <input class="details__input"
           type="text"
           name="email"
           id="email"
@@ -40,15 +40,15 @@
           aria-labelledby="email-label"
           aria-describedby="email-error"
         />
-        <div *ngIf="form.get('personalDetails.email')?.invalid && form.get('personalDetails.email')?.touched" id="name-error" role="alert">
+        <div class="details__error" *ngIf="form.get('personalDetails.email')?.invalid && form.get('personalDetails.email')?.touched" id="name-error" role="alert">
           Please enter a valid email address
         </div>
       </div>
 
       <!-- phone number input -->
-      <div class="input-details">
+      <div>
         <label for="phone" id="phone-label">Phone Number</label>
-        <input
+        <input class="details__input"
           type="text"
           name="phone"
           id="phone"
@@ -58,7 +58,7 @@
           aria-labelledby="phone-label"
           aria-describedby="phone-error"
         />
-        <div *ngIf="form.get('personalDetails.phone')?.invalid && form.get('personalDetails.phone')?.touched" id="name-error" role="alert">
+        <div class="details__error" *ngIf="form.get('personalDetails.phone')?.invalid && form.get('personalDetails.phone')?.touched" id="name-error" role="alert">
           Phone number is required
         </div>
       </div>

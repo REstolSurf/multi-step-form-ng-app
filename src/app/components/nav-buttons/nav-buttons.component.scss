@@ -1,7 +1,7 @@
 @import '../../../scss/mixins' , '../../../scss/variables';
 .buttons {
   background-color: $white;
-  position: absolute;
+  position: fixed;
   bottom:0;
   width:100%;
   @include flex(row, nowrap, space-between, center);
@@ -14,7 +14,7 @@
   &__back {
     @include h2();
     &:hover{
-      color: $light-gray;
+      color: $body;
     }
   }
   &__confirm {

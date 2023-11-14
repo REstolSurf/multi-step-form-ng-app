@@ -15,17 +15,17 @@
       >
         <mat-button-toggle value="arcade" (click)="updatePlanCost(arcadePrice)">
           <h3>Arcade</h3>
-          <h4>{{ arcadePrice | toPriceString: yearlyIsChecked}}</h4>
+          <h2>{{ arcadePrice | toPriceString: yearlyIsChecked}}</h2>
           <h5 *ngIf="yearlyIsChecked">{{ discount }}</h5>
         </mat-button-toggle>
         <mat-button-toggle value="advanced" (click)="updatePlanCost(advancedPrice)">
           <h3>Advanced</h3>
-          <h4>{{ advancedPrice| toPriceString: yearlyIsChecked}}</h4>
+          <h2>{{ advancedPrice| toPriceString: yearlyIsChecked}}</h2>
           <h5 *ngIf="yearlyIsChecked">{{ discount }}</h5>
         </mat-button-toggle>
         <mat-button-toggle value="pro" (click)="updatePlanCost(proPrice)">
           <h3>Pro</h3>
-          <h4>{{proPrice| toPriceString: yearlyIsChecked}}</h4>
+          <h2>{{proPrice| toPriceString: yearlyIsChecked}}</h2>
           <h5 *ngIf="yearlyIsChecked">{{ discount }}</h5>
         </mat-button-toggle>
       </mat-button-toggle-group>

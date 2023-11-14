@@ -14,20 +14,20 @@
 <form class="example-section" formGroupName="addOnsDetails">
     <p><mat-checkbox formControlName="service">
         <h3>Online service</h3>
-        <h5>Acces to multiplayer games</h5>
-        <h4>+{{ servicePrice | toPriceString: yearlyIsChecked}}</h4>
+        <h4>Acces to multiplayer games</h4>
+        <h5>+{{ servicePrice | toPriceString: yearlyIsChecked}}</h5>
 
     </mat-checkbox></p>
     <p><mat-checkbox formControlName="storage">
         <h3>Larger storage</h3>
-        <h5>Extra 1TB of cloud save</h5>
-        <h4>+{{ storagePrice | toPriceString: yearlyIsChecked}}</h4>
+        <h4>Extra 1TB of cloud save</h4>
+        <h5>+{{ storagePrice | toPriceString: yearlyIsChecked}}</h5>
 
         </mat-checkbox></p>
     <p><mat-checkbox formControlName="customization">
         <h3>Customizable profile</h3>
-        <h5>Custom theme on your profile</h5>
-        <h4>+{{ customizationPrice | toPriceString: yearlyIsChecked}}</h4>
+        <h4>Custom theme on your profile</h4>
+        <h5>+{{ customizationPrice | toPriceString: yearlyIsChecked}}</h5>
 
         </mat-checkbox></p>
   </form>
