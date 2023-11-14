@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { StepsCounterService } from './services/steps-counter.service';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,9 @@ export class AppComponent  implements OnInit {
 
   title = 'multi-step-form-ng-app';
   form!: FormGroup;
+  currentStep$ : number = 1;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private stepsCounterService: StepsCounterService) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -34,9 +36,11 @@ export class AppComponent  implements OnInit {
         storageCost: [2],
         customization: [false],
         customizationCost: [2],
-      })
+      }),
+      totalCost: [9]
     });
 
+    this.stepsCounterService.currentStep$.subscribe((value: number) => this.currentStep$ =value);
   }
 }
 

@@ -58,7 +58,7 @@
     align-items: $align;
 }
 
-@mixin tablet($medida: 650px){
+@mixin tablet($medida: 790px){
     @media screen and (min-width:$medida){
        @content;
     }

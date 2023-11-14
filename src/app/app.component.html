@@ -2,11 +2,10 @@
   <div class="content">
     <app-stepbar/>
     <ng-container [formGroup]="form">
-      <app-personal-details/>
-      <app-plans/>
-      <app-add-ons/>
-      <app-summary/>
-
+      <app-personal-details *ngIf="currentStep$ === 1"/>
+      <app-plans *ngIf="currentStep$ === 2"/>
+      <app-add-ons *ngIf="currentStep$ === 3"/>
+      <app-summary *ngIf="currentStep$ === 4"/>
   </ng-container>
       <app-nav-buttons/>
   </div>

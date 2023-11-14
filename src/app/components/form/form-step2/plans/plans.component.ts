@@ -26,11 +26,14 @@ export class PlansComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.rootFormGroup.control as FormGroup;
+    this.yearlyIsChecked = this.form.get('planDetails.yearlyPlan')?.value;
 
     this.form.get('planDetails.yearlyPlan')?.valueChanges.subscribe((value) => {
       // Realizar acciones adicionales cuando cambia el valor de 'yearlyPlan'
       this.yearlyIsChecked = value;
     });
+
+    
   }
 
   updatePrices() {
@@ -56,4 +59,5 @@ export class PlansComponent implements OnInit {
   updatePlanCost(cost: number) {
     this.form.get('planDetails')?.patchValue({ cost: cost });
   }
+
 }

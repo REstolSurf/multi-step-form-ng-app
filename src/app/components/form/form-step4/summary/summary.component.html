@@ -1,11 +1,63 @@
 <div class="summary">
-    <header>
-      <div class="title">
-        <h1 role="heading" aria-level="1">Finishing up</h1>
-        <h2 role="heading" aria-level="2">
-            Double-check everything looks OK before confirming.
-        </h2>
+  <header>
+    <div class="title">
+      <h1 role="heading" aria-level="1">Finishing up</h1>
+      <h2 role="heading" aria-level="2">
+        Double-check everything looks OK before confirming.
+      </h2>
+    </div>
+  </header>
+  <section>
+    <div>
+      <div>
+        <h3>{{ this.form.get("planDetails.plan")?.value }} ({{this.form.get("planDetails.yearlyPlan")?.value? 'Yearly': 'Monthly'}})</h3>
+        <button (click)="goToPlans()">Change</button>
       </div>
-    </header>
+      <h3>
+        {{
+          this.form.get("planDetails.cost")?.value
+            | toPriceString : this.form.get("planDetails.yearlyPlan")?.value
+        }}
+      </h3>
+    </div>
+    <div>
+      <div *ngIf="this.form.get('addOnsDetails.service')?.value">
+        <h2>Online Service</h2>
+        <h3>
+          {{
+            this.form.get("addOnsDetails.serviceCost")?.value
+              | toPriceString : this.form.get("planDetails.yearlyPlan")?.value
+          }}
+        </h3>
+      </div>
+      <div *ngIf="this.form.get('addOnsDetails.storage')?.value">
+        <h2>Larger Storage</h2>
+        <h3>
+          {{
+            this.form.get("addOnsDetails.storageCost")?.value
+              | toPriceString : this.form.get("planDetails.yearlyPlan")?.value
+          }}
+        </h3>
+      </div>
+      <div *ngIf="this.form.get('addOnsDetails.customization')?.value">
+        <h2>Customizable Profile</h2>
+        <h3>
+          {{
+            this.form.get("addOnsDetails.customizationCost")?.value
+              | toPriceString : this.form.get("planDetails.yearlyPlan")?.value
+          }}
+        </h3>
+      </div>
+    </div>
+    <div>
+        <h2>Total({{this.form.get("planDetails.yearlyPlan")?.value? 'per year': 'per month'}})</h2>
+        <h3>
+            {{
+              this.form.get("totalCost")?.value
+                | toPriceString : this.form.get("planDetails.yearlyPlan")?.value
+            }}
+          </h3>
+    </div>
+  </section>
 
 </div>
