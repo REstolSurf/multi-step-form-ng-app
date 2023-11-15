@@ -23,24 +23,32 @@
     font-size: 1em;
     font-weight: 500;
     color: $sub-title;
+    line-height: 1.5em;
+
 }
 
 @mixin h3{
     font-size: 1em;
     font-weight: 800;
     color: $body;
+    line-height: 1.5em;
+
 }
 
 @mixin h4{
     font-size: .875em;
     font-weight: 500;
     color: $sub-title;
+    line-height: 1.25em;
+
 }
 
 @mixin h5{
     font-size: 1em;
     font-weight: 500;
     color: $body;
+    line-height: 1.5em;
+
 }
 
 @mixin button($bg){

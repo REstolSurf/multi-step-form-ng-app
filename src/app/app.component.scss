@@ -31,11 +31,13 @@
         transform: none;
         top:0;
         left:0;
+        width:100%;
+
     }
     .content{
         display:grid;
-        grid-template-columns: 30% auto;
-        grid-template-rows: auto 10%;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
         gap:3rem;
         background-color:$white;
         min-width: 37.5rem;
@@ -51,5 +53,8 @@
     app-nav-buttons{
         grid-row: 2 / 3; 
         grid-column: 2 / 3;
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 1rem;
     }
 }
