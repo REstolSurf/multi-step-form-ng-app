@@ -31,5 +31,9 @@
     &:hover{
       background-color: $secondary-color;
     }
+    &:disabled{
+      background-color: $light-gray;
+      cursor:not-allowed;
+    }
   }
 }

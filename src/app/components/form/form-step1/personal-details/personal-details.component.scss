@@ -2,6 +2,11 @@
 .details{
   &__error{
     color:$red;
+    text-align: right;
+  }
+  
+  &__label-container{
+    @include flex(row, nowrap,space-between,center)
   }
   &__input{
     border-radius: .5rem;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroupDirective, FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
+import { FormGroupDirective, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-personal-details',
