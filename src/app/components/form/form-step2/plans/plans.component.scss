@@ -16,6 +16,10 @@
         &:hover{
             background-color: $bg-selected;
         }
+        &:checked{
+            background-color: $bg-selected;
+            border-color:$body;
+        }
     }
     &__btn-content{
         @include flex(row,nowrap,flex-start,center);
@@ -28,7 +32,7 @@
     }
     &__slide-toggle{
         margin:1.5rem 0;
-        background-color: $bg-selected;
+        //background-color: $bg-selected;
         border-radius: .5rem;
         padding: 1rem 0;
         @include flex(row,nowrap,center,center);
@@ -46,7 +50,7 @@
 }
 .mat-button-toggle-appearance-standard.mat-button-toggle-checked {
     background-color: $bg-selected;
-    border-color:$body !important;
+   border-color:$body !important;
 }
 
 

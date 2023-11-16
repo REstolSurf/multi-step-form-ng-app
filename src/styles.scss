@@ -1,5 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
 @import '../src/scss/reset' , '../src/scss/mixins';
+
+//material custom theme 
+@import './scss/customTheme';
+
 html,
 body {
   height: 100%;

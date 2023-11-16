@@ -1,7 +1,7 @@
 
 <div class="addons">
     <header>
-      <div class="title">
+      <div>
         <h1 role="heading" aria-level="1">Pick add-ons
         </h1>
         <h2 role="heading" aria-level="2">
@@ -11,8 +11,8 @@
     </header>
 <ng-container [formGroup]="form">
 
-<form class="example-section" formGroupName="addOnsDetails">
-    <p><mat-checkbox formControlName="service">
+<form class="addons__form" formGroupName="addOnsDetails">
+    <p><mat-checkbox  formControlName="service">
         <h3>Online service</h3>
         <h4>Acces to multiplayer games</h4>
         <h5>+{{ servicePrice | toPriceString: yearlyIsChecked}}</h5>

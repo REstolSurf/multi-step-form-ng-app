@@ -48,7 +48,7 @@
       </mat-button-toggle-group>
 <div class="plans__slide-toggle">
       <span [ngClass]="{'plans__span--sel' : yearlyIsChecked}">Monthly</span>
-      <mat-slide-toggle color="$body"
+      <mat-slide-toggle
         id="planDuration"
         [formControl]="$any(form).get('planDetails.yearlyPlan')"
         [checked]="yearlyIsChecked"

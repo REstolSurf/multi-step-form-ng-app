@@ -1,0 +1,9 @@
+@import '../../../../../scss/mixins' , '../../../../../scss/variables' ; 
+.mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background{
+    border-color: blue !important;
+    background-color: blue !important;
+}    
+.mdc-checkbox__background{
+    border-color: blue !important;
+    background-color: blue !important;
+}
