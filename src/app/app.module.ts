@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { ToPriceStringPipe } from './pipes/to-price-string.pipe';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ConfirmComponent } from './components/form/form-step5/confirm/confirm.component';
 
 
 
@@ -29,6 +30,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     StepbarComponent,
     NavButtonsComponent,
     ToPriceStringPipe,
+    ConfirmComponent,
   ],
   imports: [
     BrowserModule,
