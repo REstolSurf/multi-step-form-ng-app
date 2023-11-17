@@ -20,8 +20,11 @@
         
     }
     &__labels-container{
-        min-width:270px;
         @include flex(row,nowrap,space-between,center);
+        min-width: 230px;
+        @include tablet(){
+            min-width:270px;
+        }
     }
     
 }
@@ -32,3 +35,4 @@
 h5{
     color:$terciary-color;
 }
+
