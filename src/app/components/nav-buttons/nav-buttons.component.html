@@ -1,5 +1,0 @@
-<div class="buttons">
-  <button *ngIf="currentStep$ > 1" class="buttons__back" (click)="prevStep()">Go Back</button>
-  <button *ngIf="currentStep$ < 4" class="buttons__next" (click)="nextStep()" [disabled]="!isFormValid">Next Step</button>
-  <button *ngIf="currentStep$ === 4" class="buttons__confirm" (click)="nextStep()">Confirm</button>
-</div>
