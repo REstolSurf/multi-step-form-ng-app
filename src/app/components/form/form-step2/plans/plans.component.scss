@@ -1,6 +1,6 @@
 @import '../../../../../scss/mixins', '../../../../../scss/variables';
 .plans{
-    
+min-width: fit-content;
     &__form{
         margin: 1.5rem 0;
     }
@@ -16,16 +16,15 @@
         &:hover{
             background-color: $bg-selected;
         }
-        &:checked{
-            background-color: $bg-selected;
-            border-color:$body;
-        }
+
+        
     }
     &__btn-content{
         @include flex(row,nowrap,flex-start,center);
-        width: 280px;
         gap: 1rem;
         padding: 1rem 0;
+        margin-left: auto;
+        min-width: 140px;
     }
     &__span--sel{
         color:$sub-title;
@@ -45,13 +44,15 @@
         width:2.75rem;
     }
     &__h5{
-        font-size: 0.875em;
+        font-size: 0.75em;
     }
 }
 .mat-button-toggle-appearance-standard.mat-button-toggle-checked {
     background-color: $bg-selected;
    border-color:$body !important;
 }
+
+
 
 
 @include tablet(){
@@ -61,8 +62,12 @@
         }
         &__btn-content{
             @include flex(column,nowrap,center, flex-start);
-            width: 100px;
             gap:1.5rem;
+            min-width: 80px;
+
+        }
+        &__btn{
+            width: 110px;
         }
 }
 }
