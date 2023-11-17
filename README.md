@@ -46,7 +46,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub Repo](https://github.com/REstolSurf/multi-step-form-ng-app)
-- Live Site URL: [GitHub Pages](https://restolsurf.github.io/multi-step-for/)
+- Live Site URL: [GitHub Pages](https://restolsurf.github.io/multi-step-form-ng-app)
 
 ### Built with
 
